@@ -209,7 +209,7 @@ def parseRobotsTxt(robotsFile="robots.txt") :
         print("Assuming nothing disallowed.")
     return blockedPaths
 
-def lastmod(f, date_only=False) :
+def lastmod(f, date_only) :
     """Determines the date when the file was last modified and
     returns a string with the date formatted as required for
     the lastmod tag in an xml sitemap.
@@ -220,6 +220,7 @@ def lastmod(f, date_only=False) :
     mod = subprocess.run(['git', 'log', '-1', '--format=%cI', f],
                     stdout=subprocess.PIPE,
                     universal_newlines=True).stdout.strip()
+    print(date_only)
     if len(mod) == 0 :
         mod = datetime.now().astimezone().replace(microsecond=0).isoformat()
     if date_only:
