@@ -222,7 +222,7 @@ def lastmod(f, date_only) :
                     universal_newlines=True).stdout.strip()
     if len(mod) == 0 :
         mod = datetime.now().astimezone().replace(microsecond=0).isoformat()
-    if date_only != "false":
+    if date_only == "false":
         date_only = '%Y-%m-%d'
         mod = datetime.strptime(mod, '%Y-%m-%dT%H:%M:%S%z').strftime(date_only)	
     return mod
@@ -284,7 +284,6 @@ def writeXmlSitemap(files, baseUrl, date_only, dropExtension=False) :
     baseUrl - the base url to the root of the website
     dropExtension - true to drop extensions of .html from the filename in urls
     """
-    print(sys.argv[8])
     with open("sitemap.xml", "w") as sitemap :
         sitemap.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         sitemap.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
@@ -351,7 +350,7 @@ if __name__ == "__main__" :
         sitemapFormat = sys.argv[5],
         additionalExt = set(sys.argv[6].lower().replace(",", " ").replace(".", " ").split()),
         dropExtension = sys.argv[7].lower() == "true",
-	date_only = sys.argv[8]
+	date_only = sys.argv[8] == "true"
     )
 
     
