@@ -299,7 +299,8 @@ def main(
         includePDF,
         sitemapFormat,
         additionalExt,
-        dropExtension
+        dropExtension,
+	date_only
     ) :
     """The main function of the generate-sitemap GitHub Action.
 
