@@ -276,7 +276,7 @@ def writeTextSitemap(files, baseUrl, dropExtension=False) :
             sitemap.write(urlstring(f, baseUrl, dropExtension))
             sitemap.write("\n")
             
-def writeXmlSitemap(files, baseUrl, dropExtension=False) :
+def writeXmlSitemap(files, baseUrl, date_only, dropExtension=False) :
     """Writes an xml sitemap to the file sitemap.xml.
 
     Keyword Arguments:
