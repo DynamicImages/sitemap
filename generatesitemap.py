@@ -209,7 +209,7 @@ def parseRobotsTxt(robotsFile="robots.txt") :
         print("Assuming nothing disallowed.")
     return blockedPaths
 
-def lastmod(f, date_only=False) :
+def lastmod(f, date_only) :
     """Determines the date when the file was last modified and
     returns a string with the date formatted as required for
     the lastmod tag in an xml sitemap.
