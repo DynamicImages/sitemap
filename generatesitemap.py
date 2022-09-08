@@ -270,6 +270,7 @@ def writeXmlSitemap(files, baseUrl, date_only, dropExtension=False) :
     baseUrl - the base url to the root of the website
     dropExtension - true to drop extensions of .html from the filename in urls
     """
+    print(date_only)
     with open("sitemap.xml", "w") as sitemap :
         sitemap.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         sitemap.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
@@ -336,5 +337,4 @@ if __name__ == "__main__" :
         additionalExt = set(sys.argv[6].lower().replace(",", " ").replace(".", " ").split()),
         dropExtension = sys.argv[7].lower() == "true",
 	date_only = sys.argv[8]
-	print(date_only)
     )
