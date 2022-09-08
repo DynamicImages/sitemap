@@ -349,7 +349,7 @@ if __name__ == "__main__" :
         sitemapFormat = sys.argv[5],
         additionalExt = set(sys.argv[6].lower().replace(",", " ").replace(".", " ").split()),
         dropExtension = sys.argv[7].lower() == "true",
-	dateOnly = sys.argv[8]    
+	date_only = sys.argv[8]    
     )
 
     
