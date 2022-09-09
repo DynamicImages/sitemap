@@ -223,7 +223,7 @@ def lastmod(f, date_only) :
     print(date_only) # trying to debug what's going wrong...
     if len(mod) == 0 :
         mod = datetime.now().astimezone().replace(microsecond=0).isoformat()
-    if date_only == "false":
+    if date_only == "true":
         date_only = '%Y-%m-%d'
         mod = datetime.strptime(mod, '%Y-%m-%dT%H:%M:%S%z').strftime(date_only)	
     return mod
