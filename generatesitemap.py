@@ -331,7 +331,7 @@ def main(
     if pathToSitemap[-1] != "/" :
         pathToSitemap += "/"
     if sitemapFormat == "xml" :
-        writeXmlSitemap(files, baseUrl, dropExtension)
+        writeXmlSitemap(files, baseUrl, date_only, dropExtension)
         pathToSitemap += "sitemap.xml"
     else :
         writeTextSitemap(files, baseUrl, dropExtension)
