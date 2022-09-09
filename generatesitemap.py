@@ -223,7 +223,7 @@ def lastmod(f, date_only) :
     print(date_only) # trying to debug what's going wrong...
     if len(mod) == 0 :
         mod = datetime.now().astimezone().replace(microsecond=0).isoformat()
-    if date_only != "False":
+    if date_only == "False":
         date_only = '%Y-%m-%d'
         mod = datetime.strptime(mod, '%Y-%m-%dT%H:%M:%S%z').strftime(date_only)	
     return mod
@@ -351,7 +351,7 @@ if __name__ == "__main__" :
         sitemapFormat = sys.argv[5],
         additionalExt = set(sys.argv[6].lower().replace(",", " ").replace(".", " ").split()),
         dropExtension = sys.argv[7].lower() == "true",
-	date_only = sys.argv[8] == "false"
+	date_only = sys.argv[8]
     )
 
     
