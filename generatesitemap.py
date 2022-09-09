@@ -220,10 +220,10 @@ def lastmod(f, date_only) :
     mod = subprocess.run(['git', 'log', '-1', '--format=%cI', f],
                     stdout=subprocess.PIPE,
                     universal_newlines=True).stdout.strip()
-    print(date_only)
+    print(date_only) # trying to debug what's going wrong...
     if len(mod) == 0 :
         mod = datetime.now().astimezone().replace(microsecond=0).isoformat()
-    if date_only != "false":
+    if date_only != "False":
         date_only = '%Y-%m-%d'
         mod = datetime.strptime(mod, '%Y-%m-%dT%H:%M:%S%z').strftime(date_only)	
     return mod
